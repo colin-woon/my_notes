@@ -1,0 +1,2 @@
+- automated scripts that are triggered by certain git events
+- usually found in .git/hooks directory

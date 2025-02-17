@@ -1,0 +1,7 @@
+- `<!DOCTYPE html>` declaration defines that this document is an HTML5 document
+- `<html>` element is the root element of an HTML page
+- `<head>` element contains meta information about the HTML page
+- `<title>` = title for the HTML page
+- `<body>` element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
+- `<h1>` = large heading
+- `<p>` = paragraph

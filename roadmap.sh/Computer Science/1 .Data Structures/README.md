@@ -52,4 +52,4 @@
 
 # Asymptotic Analysis
 - A method of describing the behavior of algorithms as the input size grows arbitrarily large
-[[Time Complexity & Big O notation]]
+[[my_notes/roadmap.sh/Computer Science/2. Asymtotic Notation/README]]
