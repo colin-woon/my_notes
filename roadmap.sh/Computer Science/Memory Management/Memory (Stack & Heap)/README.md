@@ -9,3 +9,5 @@
 ## How Garbage Collection Works
 - The garbage collector **removes unused objects** in the heap.
 - If a reference no longer points to an object, the object is **collected and deleted** automatically.
+
+
