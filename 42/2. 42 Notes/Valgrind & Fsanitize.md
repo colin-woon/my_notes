@@ -19,4 +19,4 @@
 `-fsanitize=leak`
 `-fsanitize=thread`
 `-fsanitize=address`
-`-fsanitize=memory` (only available )
+`-fsanitize=memory` (only available on clang compiler, not gcc or cc)
