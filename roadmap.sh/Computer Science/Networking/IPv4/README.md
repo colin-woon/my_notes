@@ -5,6 +5,13 @@
 	- Network IDs (used for identifying the network, subnet mask)
 	- Host IDs (used for identifying the network device)
 
+# Private IPs (only for LANs)
+- 10.0.0.0
+- 172.16.0.0
+- 192.168.0.0
+
+# Public IPs
+
 | Class | Address Range               | Leading Bits | Default Subnet Mask | Hosts per Network | Usage                                              |
 | ----- | --------------------------- | ------------ | ------------------- | ----------------- | -------------------------------------------------- |
 | A     | 1.0.0.0 - 126.255.255.255   | 0            | 255.0.0.0 (/8)      | 16 million+       | Large networks (ISPs, enterprises)                 |
