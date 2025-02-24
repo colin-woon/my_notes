@@ -23,7 +23,11 @@ that consists of 3 2^8
 	- class C *110*11111 NNNH 2^5 * 2^8 * 2^8 = 2 million
 	- N - octet for network
 	- H - octet for hosts
-### Special Address Ranges
 
+### Special Address Ranges
 - **127.0.0.0 - 127.255.255.255** → Loopback addresses (Local testing) (LOCALHOST 127.0.0.0)
 - **169.254.0.0 - 169.254.255.255** → APIPA (Automatic Private IP Addressing, assigned when DHCP fails)
+
+# 2^Host_bits - 2
+- 0 network IP
+- 255 broadcast IP
