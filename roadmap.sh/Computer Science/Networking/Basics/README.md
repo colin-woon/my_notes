@@ -21,6 +21,10 @@
 - to **communicate outside the LAN, it must go through the router**
 - has 4 core functionalities as a gateway device
 	- **Network Address Translation (NAT)**
+		- (LAN > WAN) translates a network device's IP address to a different one to communicate on another network
 	- **Firewall**
-	- **Port Forwarding**
-	- **Demilitarized Zone (DMZ)**
+		-  (WAN x> LAN) set of passive rules to protect local network from unauthorized access
+		- **Port Forwarding**
+			- (WAN > LAN) only allows external network communication through a certain port
+		- **Demilitarized Zone (DMZ)**
+			- (WAN <> DMZ) allows direct access to anyone outside of any network 
