@@ -18,4 +18,9 @@
 
 ## Router
 - forwards data packets between **different networks**
-- to communicate outside the LAN, it must go through the router
+- to **communicate outside the LAN, it must go through the router**
+- has 4 core functionalities as a gateway device
+	- **Network Address Translation (NAT)**
+	- **Firewall**
+	- **Port Forwarding**
+	- **Demilitarized Zone (DMZ)**
