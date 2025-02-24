@@ -12,10 +12,17 @@
 | C     | 192.0.0.0 - 223.255.255.255 | 110          | 255.255.255.0 (/24) | 254               | Small networks (home, small businesses)            |
 | D     | 224.0.0.0 - 239.255.255.255 | 1110         | N/A                 | N/A               | Multicasting (one-to-many communication)           |
 | E     | 240.0.0.0 - 255.255.255.255 | 1111         | N/A                 | N/A               | Experimental, research, future use                 |
-Host per network depends on default subnet masks,
+- Host per network depends on default subnet masks,
 eg: 255.0.0.0 = 2^24
 that consists of 3 2^8
 2^24 - 2 (network & broadcast address) = host per network
+
+- Leading Bits in the 1st octet determine its class, will also determine the number of networks
+	- class A *0*1111111 NHHH 2^7 = 126 
+	- class B *10*111111 NNHH 2^6 * 2^8 = 16 384 
+	- class C *110*11111 NNNH 2^5 * 2^8 * 2^8 = 2 million
+	- N - octet for network
+	- H - octet for hosts
 ### Special Address Ranges
 
 - **127.0.0.0 - 127.255.255.255** → Loopback addresses (Local testing) (LOCALHOST 127.0.0.0)
