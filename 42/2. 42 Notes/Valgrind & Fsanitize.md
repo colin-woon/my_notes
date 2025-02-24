@@ -14,6 +14,7 @@
 ## Valgrind Options
 `--trace-children=yes` - tracks child porcesses
 `--leak-check=full`
+`--show-leak-kinds=all`
 
 ## Fsanitize Options
 `-fsanitize=leak`
