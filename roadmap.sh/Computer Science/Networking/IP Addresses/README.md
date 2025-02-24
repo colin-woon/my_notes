@@ -1,6 +1,9 @@
 # IPv4
 - xxx.xxx.xxx.xxx, a 32-bit binary/ 4 octets/ 4 bytes
 - maximum value of 1 byte is 255 or 11111111
+- an IP address consist of 2 parts
+	- Network IDs (used for identifying the network, subnet mask)
+	- Host IDs (used for identifying the network device)
 
 | Class | Address Range               | Leading Bits | Default Subnet Mask | Hosts per Network | Usage                                              |
 | ----- | --------------------------- | ------------ | ------------------- | ----------------- | -------------------------------------------------- |
