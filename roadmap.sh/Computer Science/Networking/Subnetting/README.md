@@ -1,1 +1,2 @@
 ### Subnet Mask - used to denote network addresses and host addresses, not an entity in the network
+### CIDR (Classless Inter-Domain Route)
