@@ -14,7 +14,7 @@
 	- means subnet mask should be 255.255.255.0
 2. but 26 - 24 = 2, meaning from left to right, there the network address occupies 2 extra bits
 	- \[24bits]\[1100000]
-	- when converting binary to base 10, we go from right to left, so the 2 bits is 2^7 + 2\^6
+	- when converting binary to base 10, we go from right to left, so the 2 bits is 2^7 + 2\^6, since rightmost will start at 2^0 (\[00000001], 1\*2^0)
 	- 128 + 64 = 192
 	- final subnet mask is 255.255.255.192 
 
@@ -45,3 +45,12 @@ Subnet Mask: 255.255.255.192
 
 
 # Creating Subnets
+### Problem: Create 10 subnets
+Ori IP Address: 205.150.65.0/24
+Ori Subnet Mask: 255.255.255.0
+
+1. using formula 2^n to find total subnets, compare it with the \<number of subnets required>
+	- nearest possible value to accommodate 10 subnets is 2^4 = 16, 2^3 = 8 is not enough
+	- convert and find the new subnet mask
+New IP Address:  205.150.65.0/24
+New Subnet Mask: 255.255.255.
