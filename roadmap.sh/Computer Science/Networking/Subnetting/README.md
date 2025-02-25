@@ -33,3 +33,15 @@ Subnet Mask: 255.255.255.192
 	- number of subnets = 2^2 = 4
 2. in 8 bits, 2 bits is reserve for the subnets, so remaining is 6 bits
 	- number of hosts = 2^6 - 2 = 64 - 2 = 62
+
+# Calculating Broadcast Address
+1. Determine the Network Address = 205.150.65.0
+2. Determine the Host Address range = 62
+	- 1st Host Address = 205.150.65.1
+	- Last Host Address = 205.150.65.62
+3. Finally, Broadcast Address is = 205.150.65.63
+
+#### Next network address will start from .64, there will be a total of 4 subnets as calculated
+
+
+# Creating Subnets
