@@ -18,3 +18,18 @@
 	- 128 + 64 = 192
 	- final subnet mask is 255.255.255.192 
 
+# Calculating Network Address
+IP Address: 205.150.65.0/26
+Subnet Mask: 255.255.255.192
+1. To find network address manually, you need to convert the IP Address and the Subnet Mask to binary, then do an AND operation with the bits
+2. Or you can use a binary calculator and find the AND operation with the decimals
+3. Say if the ip address is 0, it will always result in 0 for AND, cause 0 + 1 is still 0
+
+# Calculating number of Subnets & Hosts
+`# of subnets = 2^n`     `# of hosts = 2^r-2`
+`n = extra bits from CIDR range, its either 8, 16, 24`
+`r = remaining bits in an octet after deducting the subnet bits`
+1. Using the previous example, 26 - 24 is 2 bits, so:
+	- number of subnets = 2^2 = 4
+2. in 8 bits, 2 bits is reserve for the subnets, so remaining is 6 bits
+	- number of hosts = 2^6 - 2 = 64 - 2 = 62
