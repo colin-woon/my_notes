@@ -51,6 +51,12 @@ Ori Subnet Mask: 255.255.255.0
 
 1. using formula 2^n to find total subnets, compare it with the \<number of subnets required>
 	- nearest possible value to accommodate 10 subnets is 2^4 = 16, 2^3 = 8 is not enough
+	- meaning you need 4 extra bits for 10 subnets so 24 + 4 = 28
 	- convert and find the new subnet mask
-New IP Address:  205.150.65.0/24
-New Subnet Mask: 255.255.255.
+New IP Address:  205.150.65.0/28
+New Subnet Mask: 255.255.255.240
+Network Address: 205.150.65.0
+Number of Hosts: 2^4 - 2 = 16 - 2 = 14
+Host Range  205.150.65.1 -  205.150.65.14
+Broadcast Address:  205.150.65.15
+
