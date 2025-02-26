@@ -1,30 +1,46 @@
 # Networking Basics
 
-- IP Address - logical address to locate your machine in a network
-- All network devices will need 3 things
-	- IP
-	- Subnet
-	- Gateway (IP address of the router)
-## Local Area Network (LAN)
-- Switch - It connects multiple devices (computers, printers, etc.) and ensures that data gets sent directly to the right device instead of being broadcasted to everyone.
-#### Subnet
-- defines the range of your LAN
-- if devices share the same subnet, they are in the same LAN
-- eg:
-	A - 192.168.10.20
-	B - 192.168.9.72
-	Their subnet is 255.255.0.0
-	Anything with 255 means its the identifier, and the 0 indicates it can be any value, so in this scenario, 192.168 is the identifier
+# IP Address
 
-## Router
-- forwards data packets between **different networks**
-- to **communicate outside the LAN, it must go through the router**
-- has 4 core functionalities as a gateway device
-	- **Network Address Translation (NAT)**
-		- (LAN > WAN) translates a network device's IP address to a different one to communicate on another network
-	- **Firewall**
-		-  (WAN x> LAN) set of passive rules to protect local network from unauthorized access
-		- **Port Forwarding**
-			- (WAN > LAN) only allows external network communication through a certain port
-		- **Demilitarized Zone (DMZ)**
-			- (WAN <> DMZ) allows direct access to anyone outside of any network 
+A logical address used to locate your machine in a network.
+
+# Network Device Requirements
+
+All network devices need three essential components:
+
+- **IP Address**
+- **Subnet Mask**
+- **Gateway** (IP address of the router)
+
+# Local Area Network (LAN)
+A **LAN** connects multiple devices within a limited area.
+
+# Switch
+A switch connects multiple devices (computers, printers, etc.) and ensures that data is sent directly to the intended recipient instead of being broadcasted to all devices.
+
+# Subnet
+Defines the range of your LAN. If devices share the same subnet, they are in the same LAN.
+
+#### Example:
+
+- Device A: `192.168.10.20`
+- Device B: `192.168.9.72`
+- Subnet Mask: `255.255.0.0`
+
+Explanation:
+
+- Any segment with `255` represents the network identifier.
+- Any segment with `0` allows for any value, meaning in this case, `192.168` is the shared network identifier.
+
+# Router
+A router forwards data packets between **different networks**.
+### Core Functionalities
+To communicate outside the LAN, data must go through the router. It provides four core functionalities:
+#### **Network Address Translation (NAT)**
+- Converts a local device's IP address to a different one to communicate on another network (LAN → WAN).
+#### **Firewall**
+- Implements a set of passive rules to protect the local network from unauthorized access (WAN ✗→ LAN).
+#### **Port Forwarding**
+- Allows external network communication through a specific port (WAN → LAN).
+#### **Demilitarized Zone (DMZ)**
+- Allows direct access to a specified device from outside any network (WAN ⇄ DMZ).
