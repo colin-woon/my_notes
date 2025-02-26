@@ -1,0 +1,11 @@
+- comply with the C++98 standard
+- Write class names in UpperCamelCase format. Files containing class code will always be named according to the class name. For instance: ClassName.hpp\/ClassName.h, ClassName.cpp, or ClassName.tpp
+- Then, if you have a header file containing the definition of a class "BrickWall" standing for a brick wall, its name will be BrickWall.hpp.
+- Unless specified otherwise, every output messages must be ended by a new-line character and displayed to the standard output.
+- • You are allowed to use almost everything from the standard library.
+- C++11 (and derived forms) and Boost libraries are forbidden. The following functions are forbidden too: \*printf(), \*alloc() and free(). If you use them, your grade will be 0 and that’s it.
+- Orthodox Canonical Form (Module 02 to Module 09)
+- You are allowed to use the STL in the Module 08 and 09 only. That means: no Containers (vector/list/map/and so forth) and no Algorithms (anything that requires to include the header) until then. Otherwise, your grade will be -42.
+- When you allocate memory (by using the new keyword), you must avoid memory leaks.
+- Any function implementation put in a header file (except for function templates) means 0 to the exercise.
+- You should be able to use each of your headers independently from others. Thus, they must include all the dependencies they need. However, you must avoid the problem of double inclusion by adding include guards. Otherwise, your grade will be 0.
