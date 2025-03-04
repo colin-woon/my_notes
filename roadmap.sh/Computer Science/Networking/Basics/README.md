@@ -44,3 +44,7 @@ To communicate outside the LAN, data must go through the router. It provides fou
 - Allows external network communication through a specific port (WAN → LAN).
 #### **Demilitarized Zone (DMZ)**
 - Allows direct access to a specified device from outside any network (WAN ⇄ DMZ).
+
+Regarding to our real life wifi networks
+	1. all telcos sell public ips to use customers, only the router has the public ip, each router is 1 public ip
+	2. so thats how many private networks can have the same 192.168 ip address
