@@ -1,5 +1,22 @@
 Fixed-point arithmetic is a technique used to represent fractional numbers using integers and bitwise operations. It is commonly used in systems without floating-point units (FPUs) for better performance and precision control.
 
+### What Happens Without an FPU?
+Some embedded systems (like low-power microcontrollers) **don’t have an FPU**. In these cases:
+- Floating-point operations must be done using **software emulation**, which is **much slower** than hardware-based calculations.
+- Instead of floating-point, developers use **fixed-point arithmetic**, which treats fractions as integers using **bit shifting**.
+
+```c++
+static const int fractionalBits = 8;
+int fixedA = 1.5 * (1 << fractionalBits);  // 1.5 * 256 = 384
+int fixedB = 2.5 * (1 << fractionalBits);  // 2.5 * 256 = 640
+
+// Multiply and shift back
+int fixedResult = (fixedA * fixedB) >> fractionalBits; // (384 * 640) >> 8
+float finalResult = (float)fixedResult / (1 << fractionalBits);
+
+std::cout << "Fixed-point result: " << finalResult << std::endl;
+```
+
 ## How It Works
 
 ### 1. Conversion (Scaling Up)
