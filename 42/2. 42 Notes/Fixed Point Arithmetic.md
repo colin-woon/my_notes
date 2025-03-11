@@ -1,3 +1,4 @@
+
 Fixed-point arithmetic is a technique used to represent fractional numbers using integers and bitwise operations. It is commonly used in systems without floating-point units (FPUs) for better performance and precision control.
 
 ### What Happens Without an FPU?
@@ -5,7 +6,7 @@ Some embedded systems (like low-power microcontrollers) **don’t have an FPU**.
 - Floating-point operations must be done using **software emulation**, which is **much slower** than hardware-based calculations.
 - Instead of floating-point, developers use **fixed-point arithmetic**, which treats fractions as integers using **bit shifting**.
 
-```c++
+```cpp
 static const int fractionalBits = 8;
 int fixedA = 1.5 * (1 << fractionalBits);  // 1.5 * 256 = 384
 int fixedB = 2.5 * (1 << fractionalBits);  // 2.5 * 256 = 640
@@ -17,39 +18,53 @@ float finalResult = (float)fixedResult / (1 << fractionalBits);
 std::cout << "Fixed-point result: " << finalResult << std::endl;
 ```
 
-## How It Works
+## Scaling Factor Considerations
 
-### 1. Conversion (Scaling Up)
-- Choose a scaling factor, typically a power of 2 (e.g., `2^n`).
-- Multiply the floating-point number by this factor to convert it into an integer.
-- Use a left shift (`<<`) if the scaling factor is a power of 2.
+Fixed-point arithmetic allows **any** scale factor, but if the scale is a **power of 2**, we can optimize calculations using **bitwise shifting**.
 
-#### Example:
-```c
-float x = 3.75;
-int scale = 1 << 8; // 2^8 = 256
-int fixed_x = (int)(x * scale); // 3.75 * 256 = 960
+### ✅ Power of 2 Scale (e.g., 2, 4, 8, 16, ...)
+- Use **bitwise shift** (`<<` for multiplication, `>>` for division).
+- More efficient than normal multiplication and division.
+
+#### Example (Power of 2 Scale):
+```cpp
+#include <iostream>
+
+int main() {
+    float x = 3.75;
+    int scale = 1 << 8; // 2^8 = 256
+
+    int fixed_x = static_cast<int>(x * scale); // 3.75 * 256 = 960
+    float result = static_cast<float>(fixed_x) / scale; // Convert back
+
+    std::cout << "Fixed: " << fixed_x << ", Floating: " << result << std::endl;
+    return 0;
+}
 ```
 
-### 2. Perform Calculations
-- Addition and subtraction work as usual.
-- For multiplication, you may need to rescale after the operation.
-- For division, scale properly to maintain precision.
+### ✅ Non-Power of 2 Scale (e.g., 3, 5, 7, ...)
+- Use **normal multiplication and division** (`*` and `/`).
+- Bitwise shifting does not work correctly.
 
-#### Example:
-```c
-int fixed_y = (int)(2.5 * scale); // 2.5 * 256 = 640
-int fixed_result = (fixed_x * fixed_y) / scale; // (960 * 640) / 256
+#### Example (Non-Power of 2 Scale):
+```cpp
+#include <iostream>
+
+int main() {
+    float x = 3.75;
+    int scale = 3; // Not a power of 2
+
+    int fixed_x = static_cast<int>(x * scale); // 3.75 * 3 = 11
+    float result = static_cast<float>(fixed_x) / scale; // Convert back
+
+    std::cout << "Fixed: " << fixed_x << ", Floating: " << result << std::endl;
+    return 0;
+}
 ```
 
-### 3. Conversion Back (Scaling Down)
-- Divide by the scaling factor to convert back to floating-point.
-- Use a right shift (`>>`) if using a power of 2.
-
-#### Example:
-```c
-float result = (float)fixed_result / scale; // Convert back to float
-```
+### 🔹 Rule of Thumb
+- **If scale is a power of 2** → Use **bitwise shift**.
+- **If scale is not a power of 2** → Use **normal arithmetic** (`*`, `/`).
 
 ## Why Use Fixed-Point?
 - **Performance**: Faster than floating-point operations, especially on systems without an FPU.
