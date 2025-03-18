@@ -17,8 +17,8 @@ Explicit Normalization
 Exponent = 4
 Mantissa = 5625
 
-eg: if exponent is 8 bits
+eg: if exponent is 4 bits
 - represents values from 2^-8 - 2^8, but flip them and make them positive, 2^0 - 2^15
 - hence, bias is 127
 - How to use it:
-	- 
+	- if found that exponent is 3, 2^3 = 8, convert to binary to store in the 4 bits space
