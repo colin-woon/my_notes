@@ -50,6 +50,39 @@ Bias = 2^(N-1) - 1
   ```
   This binary representation is stored in the exponent bits.
 
+## Converting 0.625 to Binary
+
+### **Step 1: Multiply by 2 Repeatedly**
+We repeatedly multiply the decimal fraction by 2, recording the **integer part** each time:
+
+| Step | Decimal Value | × 2 | Integer Part | Fractional Part |
+|------|--------------|----|--------------|----------------|
+| 1    | 0.625       | 1.25 | **1**          | 0.25          |
+| 2    | 0.25        | 0.50 | **0**          | 0.50          |
+| 3    | 0.50        | 1.00 | **1**          | 0.00 (stops)  |
+
+### **Step 2: Read the Integer Parts**
+Reading from top to bottom, the binary representation is:
+
+```
+0.625₁₀ = 0.101₂
+```
+
+### **Verification**
+Convert **0.101₂** back to decimal:
+
+```
+(1 × 2^(-1)) + (0 × 2^(-2)) + (1 × 2^(-3)) = 0.5 + 0 + 0.125 = 0.625
+```
+
+
+✅ The conversion is correct!
+
+### **Steps**
+- **0.625 (decimal) = 0.101 (binary)**
+- Multiply by **2**, take integer parts, repeat until fraction = **0**
+- Read the integer parts from **top to bottom**
+
 ## Summary
 1. Convert the number into scientific notation.
 2. Normalize it into implicit or explicit form.
