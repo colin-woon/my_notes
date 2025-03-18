@@ -29,7 +29,7 @@ A floating-point number is represented using:
   (-1)^S × 0.M × 2^(E - Bias)
   ```
 
-## Finding the Bias
+## Finding the Bias (used for storing both -ve and +ve exponents)
 If the exponent uses **N bits**, the bias is calculated as:
 ``` 
 Bias = 2^(N-1) - 1
@@ -44,7 +44,7 @@ Bias = 2^(N-1) - 1
   ```
   Bias = 2^(4-1) - 1 = 2^3 - 1 = 7
   ```
-- If the exponent is **3**, store it as:
+- If the exponent is **3**, store it as (MUST ADD THE BIAS FIRST):
   ```
   3 + 7 = 10 (Decimal) → 1010 (Binary)
   ```
